@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>DemoServlet</servlet-name>
+        <servlet-class>Models.DemoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DemoServlet</servlet-name>
+        <url-pattern>/toto</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Banque</servlet-name>
+        <servlet-class>Models.Banque</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Banque</servlet-name>
+        <url-pattern>/banque</url-pattern>
+    </servlet-mapping>
+
+</web-app>
