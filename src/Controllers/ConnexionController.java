@@ -1,12 +1,7 @@
 package Controllers;
 
-/**
- * Created by pcthomas on 24/10/2016.
- */
-
 import java.io.IOException;
-import java.io.PrintWriter;
-
+import javax.faces.model.DataModel;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,13 +13,21 @@ import Models.ConnexionForm;
 
 public class ConnexionController extends HttpServlet {
 
+    public boolean checkLogin(String aLogin, String aPassword){
+        return true;
+    }
+
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-
-        this.getServletContext().getRequestDispatcher( "/WEB-INF/Connexion.jsp" ).forward( request, response );
-
+        DataModels.LoginDataModels lDataModel = new DataModels.LoginDataModels();
+        lDataModel.Test();
+        this
+                .getServletContext()
+                .getRequestDispatcher( "/WEB-INF/Connexion.jsp" )
+                .forward( request, response );
     }
 
     public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
+
         /* Préparation de l'objet formulaire */
         ConnexionForm form = new ConnexionForm();
 
@@ -39,6 +42,9 @@ public class ConnexionController extends HttpServlet {
 
         // Si Objet client est renvoyé alors on redirige vers la page MonCompte
 
-        this.getServletContext().getRequestDispatcher("/WEB-INF/MonCompte.jsp").forward( request, response );
+        this
+                .getServletContext()
+                .getRequestDispatcher("/WEB-INF/MonCompte.jsp")
+                .forward( request, response );
     }
 }

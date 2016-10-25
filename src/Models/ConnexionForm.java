@@ -130,7 +130,6 @@ public final class ConnexionForm extends HttpServlet {
             Element element = (Element) node;
             cl.setNom(getTagValue("name", element));
             cl.setPrenom(getTagValue("prenom", element));
-            cl.setId(Integer.parseInt(getTagValue("id", element)));
         }
         System.out.println(cl.toString());
         return cl;
