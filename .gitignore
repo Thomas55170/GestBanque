@@ -6,6 +6,8 @@
 # Package Files #
 *.jar
 *.war
+*.iml
+*.DS_Store
 *.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
@@ -14,10 +16,4 @@ hs_err_pid*
 #Intellij
 .idea
 lib/
-out/artifacts/GestBanque/WEB-INF/classes/Beans/
-out/artifacts/GestBanque/WEB-INF/classes/Controllers/
-out/artifacts/GestBanque/WEB-INF/classes/Model/
-out/artifacts/GestBanque/WEB-INF/classes/Models/
-out/production/GestBanque/Beans/
-out/production/GestBanque/Controllers/
-out/production/GestBanque/Models/
+/out/
