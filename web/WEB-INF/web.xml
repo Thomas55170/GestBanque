@@ -26,6 +26,17 @@
         <url-pattern>/connexion</url-pattern>
     </servlet-mapping>
 
+    <!-- DECONNEXION -->
+    <servlet>
+        <servlet-name>Deconnexion</servlet-name>
+        <servlet-class>Controllers.DeconnexionController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Deconnexion</servlet-name>
+        <url-pattern>/deconnexion</url-pattern>
+    </servlet-mapping>
+
 
     <!-- BANQUE -->
     <servlet>

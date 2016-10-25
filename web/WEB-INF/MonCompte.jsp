@@ -7,5 +7,5 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="Header.jsp" %>
-<h1>Bienvenue sur votre compte</h1>
+<h1>Bienvenue sur votre compte ${prenom}</h1>
 <%@ include file="Footer.jsp" %>

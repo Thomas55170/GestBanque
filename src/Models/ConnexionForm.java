@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.servlet.http.HttpSession;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -36,10 +37,10 @@ public final class ConnexionForm extends HttpServlet {
 
         String nom =  request.getParameter(CHAMP_LOGIN);
         String prenom =  request.getParameter(CHAMP_PASS);
+
         ClientBanque client = new ClientBanque();
         client.setNom(nom);
         client.setPrenom(prenom);
-
         //Lire le fichier XML
         // Testé la présence du client dans le fichier
             // Créer la session
@@ -50,9 +51,31 @@ public final class ConnexionForm extends HttpServlet {
         System.out.println("ar ici !!!!"+file);
         ArrayList objList = ParseXMLToArray(file);
 
+       /* boolean bool = false;
 
+        for (Object x: objList) {
+            if ((prenom == x.Prenom) && (nom == x.Nom)){
+                ClientBanque client = new ClientBanque();
+                client.setNom(nom);
+                client.setPrenom(prenom);
+                bool = true;
+                break;
+            }else{
+                bool = false;
+            }
+        }
 
-        return client;
+        if(bool == true){
+
+           // HttpSession session = request.getSession();
+           // session.setAttribute("Client", client);
+
+            return client;
+        }else{
+            return client;
+        }*/
+
+       return client;
     }
 
     public static ArrayList ParseXMLToArray(String file){
