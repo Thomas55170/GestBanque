@@ -1,9 +1,8 @@
-package Models;
+package Beans;
 
 import java.util.ArrayList;
-import javax.servlet.http.HttpServlet;
 
-public class Banque extends HttpServlet
+public class Banque
 {
     /**
      * Attribut designation : designation de la banque.

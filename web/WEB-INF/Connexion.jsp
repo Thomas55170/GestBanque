@@ -6,16 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<form class="form-signin">
-    <h2 class="form-signin-heading">Please sign in</h2>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+<%@ include file="Header.jsp" %>
+<form method="post" class="form-signin col-lg-3 col-lg-offset-4" action="connexion" >
+    <h2 class="form-signin-heading">Se connecter</h2>
+
+    <label for="inputLogin" class="sr-only">Login</label>
+    <input type="login" name="login" id="inputLogin" class="form-control" placeholder="Login" required autofocus>
+
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+    <button class="btn btn-lg btn-primary btn-block" value="Connexion" type="submit">Valider</button>
 </form>
+<%@ include file="Footer.jsp" %>

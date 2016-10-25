@@ -6,9 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="../../src/CSS/headerFooter.css">
 </body>
-<footer>
-
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">Copyright ® 2016 - Thomas BERTHEMIN/Etienne LASSEUBE/Julien BENOIT</p>
+    </div>
 </footer>
 </html>

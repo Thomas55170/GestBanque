@@ -1,4 +1,4 @@
-<%@ page import="Models.Banque" %><%--
+<%@ page import="Beans.Banque" %><%--
   Created by IntelliJ IDEA.
   User: pcthomas
   Date: 15/10/2016

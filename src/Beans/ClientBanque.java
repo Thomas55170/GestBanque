@@ -1,7 +1,7 @@
-package Models;
+package Beans;
 
 import static Models.FonctionGlobale.ParseXMLToArray;
-
+import javax.servlet.http.HttpServlet;
 /**
  * Created by Emna, Julien & Paul on 14/09/2016.
  **/
