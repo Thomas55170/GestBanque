@@ -41,8 +41,11 @@ public class LoginDataModels {
     }
 
 
-    public void Test(){
+    public LoginDataModels(){}
+
+    public boolean CheckUsers(String nom, String prenom){
         ListeClientBanque lListeClientBanque = new ListeClientBanque();
+        boolean check = false;
 
         try{
             JAXBContext lContext = JAXBContext.newInstance(ListeClientBanque.class);
@@ -51,13 +54,21 @@ public class LoginDataModels {
 
             for (ClientBanque iClient: lListeClientBanque.getListeClientBanque()){
                 System.out.println( iClient.toString());
+
+                if (prenom.equals(iClient.getPrenom()) && (nom.equals(iClient.getNom()))){
+                    check = true;
+                    break;
+                }else{
+                    check = false;
+                }
+
             }
+
         } catch (JAXBException e){
             e.printStackTrace();
         }
 
-
-
+        return check;
 
     }
 }

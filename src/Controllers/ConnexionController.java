@@ -1,7 +1,6 @@
 package Controllers;
 
 import java.io.IOException;
-import javax.faces.model.DataModel;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +17,7 @@ public class ConnexionController extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        DataModels.LoginDataModels lDataModel = new DataModels.LoginDataModels();
-        lDataModel.Test();
+
         this
                 .getServletContext()
                 .getRequestDispatcher( "/WEB-INF/Connexion.jsp" )
@@ -32,19 +30,24 @@ public class ConnexionController extends HttpServlet {
         ConnexionForm form = new ConnexionForm();
 
         /* Appel au traitement et à la validation de la requête, et récupération du bean en résultant */
-        ClientBanque client = form.connexionClient(request);
+        Boolean clientBool = form.connexionClient(request);
 
-        HttpSession session = request.getSession();
+        if (clientBool == true){
 
-        /* Stockage du formulaire et du bean dans l'objet request */
-        request.setAttribute("form", form);
-        request.setAttribute("prenom", client.getPrenom());
+                    /* Stockage du formulaire et du bean dans l'objet request */
+            request.setAttribute("form", form);
 
-        // Si Objet client est renvoyé alors on redirige vers la page MonCompte
+            // Si Objet client est renvoyé alors on redirige vers la page MonCompte
 
-        this
-                .getServletContext()
-                .getRequestDispatcher("/WEB-INF/MonCompte.jsp")
-                .forward( request, response );
+            this
+                    .getServletContext()
+                    .getRequestDispatcher("/WEB-INF/MonCompte.jsp")
+                    .forward( request, response );
+        }else{
+            this
+                    .getServletContext()
+                    .getRequestDispatcher( "/WEB-INF/Connexion.jsp" )
+                    .forward( request, response );
+        }
     }
 }
