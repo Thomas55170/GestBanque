@@ -94,7 +94,39 @@ public final class ConnexionForm extends HttpServlet {
         return str;*/
 
 
-        File xmlFile = new File(file);
+        final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        try{
+            final DocumentBuilder builder = factory.newDocumentBuilder();
+
+        }catch(final ParserConfigurationException e){
+            e.printStackTrace();
+        }
+
+
+        try {
+            final DocumentBuilder builder = factory.newDocumentBuilder();
+            final Document document= builder.parse(new File("../Data/Client.xml"));
+            final Element racine = document.getDocumentElement();
+
+            System.out.println(racine.getNodeName());
+
+        }
+        catch (final ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+        catch (final SAXException e) {
+            e.printStackTrace();
+        }
+        catch (final IOException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<String> arrayList = new ArrayList<String>();
+
+        return arrayList;
+
+
+       /* File xmlFile = new File(file);
         System.out.println("ICI"+xmlFile);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder;
@@ -120,7 +152,7 @@ public final class ConnexionForm extends HttpServlet {
         } catch (SAXException | ParserConfigurationException | IOException e1) {
             e1.printStackTrace();
         }
-        return objList;
+        return objList;*/
     }
 
     private static ClientBanque getClient(Node node) {
