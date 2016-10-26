@@ -1,21 +1,19 @@
 package Controllers;
 
-import java.io.IOException;
+import Beans.ListeCoffresBoutique;
+import Models.BoutiqueModels;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import Beans.ClientBanque;
-import Beans.ListeCoffresBoutique;
-import Models.BoutiqueModels;
-import Models.ConnexionForm;
+import java.io.IOException;
 
 /**
- * Created by pcthomas on 25/10/2016.
-*/
-public class BoutiqueController extends HttpServlet {
+ * Created by pcthomas on 26/10/2016.
+ */
+public class CompteController extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -23,18 +21,11 @@ public class BoutiqueController extends HttpServlet {
 
         String nom = (String) session.getAttribute("nomClient");
         String prenom = (String) session.getAttribute("prenomClient");
-
         if((nom != null) && (prenom != null)){
-
-            BoutiqueModels boutique = new BoutiqueModels();
-
-            ListeCoffresBoutique ListeCoffre = boutique.AfficheCoffres();
-
-            request.setAttribute("listeCoffre", ListeCoffre);
 
             this
                     .getServletContext()
-                    .getRequestDispatcher( "/WEB-INF/Boutique.jsp" )
+                    .getRequestDispatcher( "/WEB-INF/MonCompte.jsp" )
                     .forward( request, response );
         }else{
             this
@@ -43,4 +34,5 @@ public class BoutiqueController extends HttpServlet {
                     .forward( request, response );
         }
     }
+
 }
