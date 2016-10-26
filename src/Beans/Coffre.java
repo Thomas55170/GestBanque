@@ -1,14 +1,26 @@
 package Beans;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlRootElement(name =  "CoffreBoutique")
+@XmlType(propOrder = {"id", "localisation", "typeCoffre", "typeSecurite", "montant"})
+@XmlAccessorType(XmlAccessType.NONE)
 public class Coffre {
+
+	@XmlElement(name = "id")
 	private int id;
+	@XmlElement(name = "localisation")
 	private String localisation;
+	@XmlElement(name = "typeCoffre")
 	private String typeCoffre;
+	@XmlElement(name = "typeSecurite")
 	private String typeSecurite;
-	private ClientBanque client;
+	@XmlElement(name = "montant")
 	private double montant;
+
+	private ClientBanque client;
+
 	private List<Operation> operations;
 
 	// constructeurs

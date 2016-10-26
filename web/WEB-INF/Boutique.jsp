@@ -5,19 +5,25 @@
   Time: 16:41
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="Header.jsp" %>
+
 <h1>Bienvenue sur la boutique</h1>
+test
+<p>${listeCoffre[1].getLocalisation()}</p>
 
-<p>${listeCoffre.getListeCoffresBoutique()[1]}</p>
+<c:forEach items="${listeCoffre}" varStatus="loopCounter"  var='c'>
 
-<c:forEach items='${listeCoffre.getListeCoffresBoutique()}' var='coffre'>
     <div style="border: 1px solid black;">
         <ul>
-            <li><c:out value ='${coffre}' /></li>
+                ${c.getLocalisation()}
+                ${loopCounter.count}
+             <br />
+             <br />
+            <li></li>
         </ul>
     </div>
 </c:forEach>
-
 
 <%@ include file="Footer.jsp" %>

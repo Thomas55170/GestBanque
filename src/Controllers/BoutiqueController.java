@@ -6,9 +6,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import Beans.Coffre;
 import Beans.ClientBanque;
+import java.util.List;
 import Beans.ListeCoffresBoutique;
+import DataModels.BoutiqueDataModels;
 import Models.BoutiqueModels;
 import Models.ConnexionForm;
 
@@ -18,14 +20,10 @@ import Models.ConnexionForm;
 public class BoutiqueController extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        BoutiqueDataModels lDataModel = new BoutiqueDataModels();
 
-        /* Préparation de l'objet formulaire*/
-        BoutiqueModels boutique = new BoutiqueModels();
 
-        /* Appel au traitement et à la validation de la requête, et récupération du bean en résultant*/
-        ListeCoffresBoutique ListeCoffre = boutique.AfficheCoffres();
-
-        request.setAttribute("listeCoffre", ListeCoffre);
+        request.setAttribute("listeCoffre", lDataModel.GetListCoffre());
 
         this
                 .getServletContext()
