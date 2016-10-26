@@ -4,7 +4,7 @@
         <id>1</id>
         <localisation>Paris</localisation>
         <typeCoffre>A aiguille</typeCoffre>
-        <typeSécurité>Alarme</typeSécurité>
+        <typeSecurite>Alarme</typeSecurite>
         <montant>1000</montant>
     </CoffreBoutique>
 
@@ -12,7 +12,7 @@
         <id>2</id>
         <localisation>Toulouse</localisation>
         <typeCoffre>Numérique</typeCoffre>
-        <typeSécurité>Sans</typeSécurité>
+        <typeSecurite>Sans</typeSecurite>
         <montant>10</montant>
     </CoffreBoutique>
 
@@ -21,7 +21,7 @@
         <id>3</id>
         <localisation>Nancy</localisation>
         <typeCoffre>Numérique</typeCoffre>
-        <typeSécurité>Digicode</typeSécurité>
+        <typeSecurite>Digicode</typeSecurite>
         <montant>10000</montant>
     </CoffreBoutique>
 
@@ -29,7 +29,7 @@
         <id>4</id>
         <localisation>Marseille</localisation>
         <typeCoffre>Toujours ouvert</typeCoffre>
-        <typeSécurité>Sans</typeSécurité>
+        <typeSecurite>Sans</typeSecurite>
         <montant>1</montant>
     </CoffreBoutique>
 

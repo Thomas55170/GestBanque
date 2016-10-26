@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../src/CSS/connexion.css">
-    <link rel="stylesheet" href="../../src/CSS/headerFooter.css">
+    <link rel="stylesheet" href="../../GestBanque/src/CSS/connexion.css">
+    <link rel="stylesheet" href="../../GestBanque/src/CSS/headerFooter.css">
 </head>
 <header>
     <div class="container">
@@ -34,8 +34,8 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="#">Mon Compte</a></li>
-                        <li><a href="#">Boutique</a></li>
-                        <li><a href="#">Liste des Opérations</a></li>
+                        <li><a href="/GestBanque/boutique">Boutique</a></li>
+                        <li><a href="/GestBanque/opérations">Liste des Opérations</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/GestBanque/deconnexion">Déconnexion</a></li>
