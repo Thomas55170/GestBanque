@@ -26,8 +26,8 @@ public class OperationController extends HttpServlet {
 
 
             DataModels.OperationDataModels lDataModel = new DataModels.OperationDataModels();
-            ListeOperation ListeOperation=lDataModel.Test();
-            request.setAttribute("ListeOperation", ListeOperation);
+
+            request.setAttribute("ListeOperation", lDataModel.GetListOperation());
             this
                     .getServletContext()
                     .getRequestDispatcher( "/WEB-INF/ListeOperation.jsp" )

@@ -54,15 +54,19 @@ public final class ConnexionForm extends HttpServlet {
 
         LoginDataModels login = new LoginDataModels();
         Boolean bool = login.CheckUsers(nom, prenom);
-
+        ClientBanque client = login.GetClient(nom,prenom);
 
         if(bool == true){
-            HttpSession session = request.getSession();
-            session.setAttribute("nomClient", nom);
-            session.setAttribute("prenomClient", prenom);
-            return true;
+            if (client != null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("idClient", client.getId());
+                session.setAttribute("nomClient", nom);
+                session.setAttribute("prenomClient", prenom);
+                return true;
+            }
         }else{
             return false;
         }
+        return false;
     }
 }
