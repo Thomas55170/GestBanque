@@ -2,13 +2,23 @@ package Beans;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name =  "Operation")
+@XmlType(propOrder = {"dateDebut", "dateFin", "typeOperation"})
+@XmlAccessorType(XmlAccessType.NONE)
+
+
+
 public class Operation {
 
 	/* Variables */
+	@XmlElement(name = "dateDebut")
 	private Date dateDebut;
+	@XmlElement(name = "dateFin")
 	private Date dateFin;
+	@XmlElement(name = "typeOperation")
 	private String typeOperation;
-
 	private ClientBanque clientBanque;
 	private Coffre coffre;
 	private Frais frais;
@@ -71,4 +81,9 @@ public class Operation {
 		this.frais = aFrais;
 	}
 
+
+	@Override
+	public String toString() {
+		return this.dateDebut + " " + this.dateFin + " "+ this.typeOperation;
+	}
 }
