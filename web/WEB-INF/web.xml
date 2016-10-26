@@ -62,4 +62,16 @@
     </servlet-mapping>
 
 
+    <!-- OPERATION -->
+    <servlet>
+        <servlet-name>Operation</servlet-name>
+        <servlet-class>Controllers.OperationController</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>Operation</servlet-name>
+        <url-pattern>/operation</url-pattern>
+    </servlet-mapping>
+
 </web-app>

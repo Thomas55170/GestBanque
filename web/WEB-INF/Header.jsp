@@ -36,7 +36,7 @@
                         <ul class="nav navbar-nav">
                             <li><a href="/GestBanque/compte">Mon Compte</a></li>
                             <li><a href="/GestBanque/boutique">Boutique</a></li>
-                            <li><a href="/GestBanque/opérations">Liste des Opérations</a></li>
+                            <li><a href="/GestBanque/operation">Liste des Opérations</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
