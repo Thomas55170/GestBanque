@@ -54,21 +54,40 @@ public class LoginDataModels {
 
             for (ClientBanque iClient: lListeClientBanque.getListeClientBanque()){
                 System.out.println( iClient.toString());
-
                 if (prenom.equals(iClient.getPrenom()) && (nom.equals(iClient.getNom()))){
                     check = true;
                     break;
                 }else{
                     check = false;
                 }
-
             }
-
         } catch (JAXBException e){
             e.printStackTrace();
         }
-
         return check;
+    }
 
+    public ClientBanque GetUserInformation(String nom, String prenom){
+        ListeClientBanque lListeClientBanque = new ListeClientBanque();
+        boolean check = false;
+
+        try{
+            JAXBContext lContext = JAXBContext.newInstance(ListeClientBanque.class);
+            Unmarshaller lUnmarsheller = lContext.createUnmarshaller();
+            lListeClientBanque = (ListeClientBanque) lUnmarsheller.unmarshal( new File(this.PathToXML));
+
+            for (ClientBanque iClient: lListeClientBanque.getListeClientBanque()){
+                System.out.println( iClient.toString());
+
+                if (prenom.equals(iClient.getPrenom()) && (nom.equals(iClient.getNom()))){
+                    return iClient;
+                }else{
+                    return null;
+                }
+            }
+        } catch (JAXBException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }

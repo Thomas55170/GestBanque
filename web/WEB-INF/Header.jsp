@@ -21,7 +21,10 @@
     <link href="../Assets/css/bootstrap.css" rel="stylesheet">
     <link href="../Assets/css/bootstrap-custom-header.css" rel="stylesheet">
     <link href="../Assets/css/bootstrap-custom-footer.css" rel="stylesheet">
+    <link href="../Assets/css/bootstrap-custom-profil.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../Assets/js/bootstrap.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -55,7 +58,7 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/GestBanque/deconnexion"><i class="glyphicon glyphicon-log-out"></i> Déconnexion</a></li>
+                            <li><a href="<%=request.getContextPath()%>/deconnexion"><i class="glyphicon glyphicon-log-out"></i> Déconnexion</a></li>
                         </ul>
                     </c:if>
                 </div><!--/.nav-collapse -->
