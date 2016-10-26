@@ -29,7 +29,6 @@ public class BoutiqueController extends HttpServlet {
         if((nom != null) && (prenom != null)){
 
             BoutiqueDataModels lDataModel = new BoutiqueDataModels();
-
             request.setAttribute("listeCoffre", lDataModel.GetListCoffre());
 
             this

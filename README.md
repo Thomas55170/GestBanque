@@ -1,2 +1,0 @@
-# GestBanque
-JAVA EE
