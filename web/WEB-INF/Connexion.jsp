@@ -32,7 +32,11 @@
         </div>
     </div>
 </div>
-<script>
-    ShowAlert("Vous êtes déconnecter de l'application, veuillez vous identifier.", "alert-info");
-</script>
+
 <%@ include file="Footer.jsp" %>
+<script>
+    $(document).ready(function(){
+        ShowAlert("Vous êtes déconnecter de l'application, veuillez vous identifier.", "alert-info");
+    })
+
+</script>

@@ -1,6 +1,7 @@
 package Controllers;
 
-import Beans.ListeCoffresBoutique;
+import Beans.ClientBanque;
+import DataModels.LoginDataModels;
 import Models.BoutiqueModels;
 
 import javax.servlet.ServletException;
@@ -19,10 +20,13 @@ public class CompteController extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        String nom = (String) session.getAttribute("nomClient");
-        String prenom = (String) session.getAttribute("prenomClient");
-        if((nom != null) && (prenom != null)){
-
+        String lNom = (String) session.getAttribute("nomClient");
+        String lPrenom = (String) session.getAttribute("prenomClient");
+        if((lNom != null) && (lPrenom != null)){
+            LoginDataModels lDataModels = new LoginDataModels();
+            ClientBanque lClient = lDataModels.GetUserInformation(lNom,lPrenom);
+            request.setAttribute("nom", lClient.getNom());
+            request.setAttribute("prenom", lClient.getPrenom());
             this
                     .getServletContext()
                     .getRequestDispatcher( "/WEB-INF/MonCompte.jsp" )
