@@ -50,7 +50,7 @@
                     <a class="navbar-brand" href="#">GestBanque</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <c:if test="${sessionScope['prenomClient'] != ''}">
+                    <c:if test="${sessionScope['bool'] == true}">
                         <ul class="nav navbar-nav">
                             <li><a href="<%=request.getContextPath()%>/compte"><i class="glyphicon glyphicon-user"></i> Mon Compte</a></li>
                             <li><a href="<%=request.getContextPath()%>/boutique"><i class="glyphicon glyphicon-shopping-cart"></i> Boutique</a></li>

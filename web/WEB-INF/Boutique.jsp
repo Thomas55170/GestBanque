@@ -21,7 +21,7 @@
                 <ul>
                     <li>Localisation: ${c.getLocalisation()}</li>
                     <li>Type de sécurité: ${c.getTypeSecurite()}</li>
-                    <li>Prix: ${c.getMontant()}</li>
+                    <li>Prix: ${c.getMontant()} euros</li>
                 </ul>
                 <p><a href="#" class="btn btn-primary" role="button">Commander</a></p>
             </div>

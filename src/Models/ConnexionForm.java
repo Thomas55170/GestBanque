@@ -41,17 +41,6 @@ public final class ConnexionForm extends HttpServlet {
         String nom =  request.getParameter(CHAMP_LOGIN);
         String prenom =  request.getParameter(CHAMP_PASS);
 
-
-        //Lire le fichier XML
-        // Testé la présence du client dans le fichier
-            // Créer la session
-        //renvoyé le client ou vide
-
-        //System.out.println("Par ici !!!!"+nom+" "+prenom);
-        //String file = "Client.xml";
-        //System.out.println("ar ici !!!!"+file);
-       // ArrayList objList = ParseXMLToArray(file);
-
         LoginDataModels login = new LoginDataModels();
         Boolean bool = login.CheckUsers(nom, prenom);
 
@@ -60,6 +49,7 @@ public final class ConnexionForm extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("nomClient", nom);
             session.setAttribute("prenomClient", prenom);
+            session.setAttribute("bool", bool);
             return true;
         }else{
             return false;
