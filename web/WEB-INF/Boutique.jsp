@@ -10,20 +10,24 @@
 <%@ include file="Header.jsp" %>
 
 <h1>Bienvenue sur la boutique</h1>
-test
-<p>${listeCoffre[1].getLocalisation()}</p>
-
+<div class="row">
 <c:forEach items="${listeCoffre}" varStatus="loopCounter"  var='c'>
 
-    <div style="border: 1px solid black;">
-        <ul>
-                ${c.getLocalisation()}
-                ${loopCounter.count}
-             <br />
-             <br />
-            <li></li>
-        </ul>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="../Assets/img/coffre.jpg" alt="coffre-fort">
+            <div class="caption">
+                <h3>${c.getTypeCoffre()}</h3>
+                <ul>
+                    <li>Localisation: ${c.getLocalisation()}</li>
+                    <li>Type de sécurité: ${c.getTypeSecurite()}</li>
+                    <li>Prix: ${c.getMontant()}</li>
+                </ul>
+                <p><a href="#" class="btn btn-primary" role="button">Commander</a></p>
+            </div>
+        </div>
     </div>
-</c:forEach>
 
+</c:forEach>
+</div>
 <%@ include file="Footer.jsp" %>

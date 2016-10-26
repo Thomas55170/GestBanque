@@ -22,7 +22,6 @@ public class BoutiqueController extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-
         String nom = (String) session.getAttribute("nomClient");
         String prenom = (String) session.getAttribute("prenomClient");
 
@@ -30,7 +29,6 @@ public class BoutiqueController extends HttpServlet {
 
             BoutiqueDataModels lDataModel = new BoutiqueDataModels();
             request.setAttribute("listeCoffre", lDataModel.GetListCoffre());
-
             this
                     .getServletContext()
                     .getRequestDispatcher( "/WEB-INF/Boutique.jsp" )
