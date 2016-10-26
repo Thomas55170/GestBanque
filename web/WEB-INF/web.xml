@@ -38,7 +38,7 @@
     </servlet-mapping>
 
 
-    <!-- BANQUE -->
+    <!-- BOUTIQUE -->
     <servlet>
         <servlet-name>Boutique</servlet-name>
         <servlet-class>Controllers.BoutiqueController</servlet-class>
@@ -47,6 +47,31 @@
     <servlet-mapping>
         <servlet-name>Boutique</servlet-name>
         <url-pattern>/boutique</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- MON COMPTE -->
+    <servlet>
+        <servlet-name>Compte</servlet-name>
+        <servlet-class>Controllers.CompteController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Compte</servlet-name>
+        <url-pattern>/compte</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- OPERATION -->
+    <servlet>
+        <servlet-name>Operation</servlet-name>
+        <servlet-class>Controllers.OperationController</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>Operation</servlet-name>
+        <url-pattern>/operation</url-pattern>
     </servlet-mapping>
 
 </web-app>

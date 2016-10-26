@@ -36,14 +36,17 @@
                     <a class="navbar-brand" href="#">GestBanque</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Mon Compte</a></li>
-                        <li><a href="/GestBanque/boutique">Boutique</a></li>
-                        <li><a href="/GestBanque/opérations">Liste des Opérations</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/GestBanque/deconnexion">Déconnexion</a></li>
-                    </ul>
+                    <c:if test="${sessionScope['prenomClient'] != ''}">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/GestBanque/compte">Mon Compte</a></li>
+                            <li><a href="/GestBanque/boutique">Boutique</a></li>
+                            <li><a href="/GestBanque/operation">Liste des Opérations</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/GestBanque/deconnexion">Déconnexion</a></li>
+                        </ul>
+                    </c:if>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </nav>
