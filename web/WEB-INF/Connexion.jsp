@@ -7,15 +7,32 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="Header.jsp" %>
-<form method="post" class="form-signin col-lg-3 col-lg-offset-4" action="connexion" >
-    <h2 class="form-signin-heading">Se connecter</h2>
 
-    <label for="inputLogin" class="sr-only">Login</label>
-    <input type="login" name="login" id="inputLogin" class="form-control" placeholder="Login" required autofocus>
-
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-
-    <button class="btn btn-lg btn-primary btn-block" value="Connexion" type="submit">Valider</button>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="glyphicon glyphicon-log-in"></i> Se connecter</h3>
+                </div>
+                <div class="panel-body">
+                    <form accept-charset="UTF-8" method="post" role="form" action="connexion">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Nom de l'agent" name="login" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Prénom de l'agent" required autofocus name="password" type="password" value="">
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block" value="Connexion" type="submit">Connexion</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    ShowAlert("Vous êtes déconnecter de l'application, veuillez vous identifier.", "alert-info");
+</script>
 <%@ include file="Footer.jsp" %>

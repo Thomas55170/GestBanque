@@ -21,24 +21,15 @@ public class BoutiqueController extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BoutiqueDataModels lDataModel = new BoutiqueDataModels();
-
-<<<<<<< HEAD
-
-        request.setAttribute("listeCoffre", lDataModel.GetListCoffre());
-=======
         HttpSession session = request.getSession();
 
         String nom = (String) session.getAttribute("nomClient");
         String prenom = (String) session.getAttribute("prenomClient");
 
         if((nom != null) && (prenom != null)){
->>>>>>> 188339756aaf9de6658688f4feede81b82020156
 
-            BoutiqueModels boutique = new BoutiqueModels();
-
-            ListeCoffresBoutique ListeCoffre = boutique.AfficheCoffres();
-
-            request.setAttribute("listeCoffre", ListeCoffre);
+            BoutiqueDataModels boutique = new BoutiqueDataModels();
+            request.setAttribute("listeCoffre",  boutique.GetListCoffre());
 
             this
                     .getServletContext()
