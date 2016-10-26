@@ -20,7 +20,7 @@ import Models.ConnexionForm;
 public class BoutiqueController extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        BoutiqueDataModels lDataModel = new BoutiqueDataModels();
+
         HttpSession session = request.getSession();
 
         String nom = (String) session.getAttribute("nomClient");
@@ -28,8 +28,8 @@ public class BoutiqueController extends HttpServlet {
 
         if((nom != null) && (prenom != null)){
 
-            BoutiqueDataModels boutique = new BoutiqueDataModels();
-            request.setAttribute("listeCoffre",  boutique.GetListCoffre());
+            BoutiqueDataModels lDataModel = new BoutiqueDataModels();
+            request.setAttribute("listeCoffre", lDataModel.GetListCoffre());
 
             this
                     .getServletContext()
