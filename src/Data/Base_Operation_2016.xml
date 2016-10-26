@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ListingOperation>
+    <Operation>
+        <dateDebut>2014-04-30</dateDebut>
+        <dateFin>2014-05-15</dateFin>
+        <typeOperation>retrait</typeOperation>
+    </Operation>
+
+    <Operation>
+        <dateDebut>2014-04-30</dateDebut>
+        <dateFin>2014-05-15</dateFin>
+        <typeOperation>retrait</typeOperation>
+    </Operation>
+
+    <Operation>
+        <dateDebut>2014-04-30</dateDebut>
+        <dateFin>2014-05-15</dateFin>
+        <typeOperation>depot</typeOperation>
+    </Operation>
+
+</ListingOperation>
