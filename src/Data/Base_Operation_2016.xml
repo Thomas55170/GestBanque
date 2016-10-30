@@ -4,18 +4,27 @@
         <dateDebut>2014-04-30</dateDebut>
         <dateFin>2014-05-15</dateFin>
         <typeOperation>retrait</typeOperation>
+        <clientBanque>3</clientBanque>
+        <coffre>1</coffre>
+        <frais>2</frais>
     </Operation>
 
     <Operation>
         <dateDebut>2014-04-30</dateDebut>
         <dateFin>2014-05-15</dateFin>
         <typeOperation>retrait</typeOperation>
+        <clientBanque>3</clientBanque>
+        <coffre>2</coffre>
+        <frais>1</frais>
     </Operation>
 
     <Operation>
         <dateDebut>2014-04-30</dateDebut>
         <dateFin>2014-05-15</dateFin>
         <typeOperation>depot</typeOperation>
+        <clientBanque>1</clientBanque>
+        <coffre>3</coffre>
+        <frais>1</frais>
     </Operation>
 
 </ListingOperation>

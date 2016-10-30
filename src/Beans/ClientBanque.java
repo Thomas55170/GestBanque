@@ -3,10 +3,11 @@ package Beans;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name =  "ClientBanque")
-@XmlType(propOrder = {"nom", "prenom"})
+@XmlType(propOrder = {"id", "nom", "prenom"})
 @XmlAccessorType(XmlAccessType.NONE)
 public class ClientBanque {
-
+    @XmlElement(name = "id")
+    private int id;
     @XmlElement(name = "Nom")
     private String nom;
     @XmlElement(name = "Prenom")
@@ -29,10 +30,12 @@ public class ClientBanque {
      */
     public ClientBanque() {}
 
+    public int getId() {
+        return this.id;
+    }
     public String getNom() {
         return this.nom;
     }
-
     public String getPrenom() {
         return this.prenom;
     }

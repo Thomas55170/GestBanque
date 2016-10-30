@@ -5,26 +5,31 @@
   Time: 09:32
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="Header.jsp" %>
-<c:forEach var="Operation" items="${request}">
-    <div style="border: 1px solid black;">
-        <ul>
-            <li><c:out value ='${Operation}' /></li>
-        </ul>
-    </div>
+<table class="table table-striped">
+<th>Date de début</th>
+<th>Date de fin</th>
+<th>Type d'opération</th>
+<c:forEach  items="${ListeOperation}" varStatus="loopCounter" var="Operation">
+
+
+
+        <tr>
+
+
+
+            <td><fmt:formatDate value="${Operation.getDateDebut()}" pattern="dd-MM-yyyy" /></td>
+            <td><fmt:formatDate value="${Operation.getDateFin()}" pattern="dd-MM-yyyy" /></td>
+            <td>${Operation.getTypeOperation()}</td>
+
+        </tr>
+
 </c:forEach>
 
-
-<tr>
-    <td><INPUT TYPE='radio' NAME="choix" VALUE=<%= (String)request.getAttribute("choix") %>></td>
-    <td><%= (String)request.getAttribute("dateDebut") %></td>
-    <td><%= (String)request.getAttribute("prenom") %></td>
-    <td><%= (String)request.getAttribute("telfixe") %></td>
-    <td><%= (String)request.getAttribute("telport") %></td>
-    <td><%= (String)request.getAttribute("mail") %></td>
-    <td><%= (String)request.getAttribute("choix") %></td>
-</tr>
+</table>
 
 
 <%@ include file="Footer.jsp" %>
