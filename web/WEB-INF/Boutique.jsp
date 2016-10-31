@@ -19,7 +19,7 @@
                 <option name="${c.getId()}">${c.getTypeCoffre()}</option>
             </c:forEach>
         </select>
-        <button class="btn btn-lg btn-primary btn-block" value="Commander" type="submit">Commander</button>
+        <button class="btn btn-lg btn-primary" value="Commander" type="submit">Commander</button>
     </fieldset>
 </form>
 

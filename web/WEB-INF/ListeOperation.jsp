@@ -11,13 +11,18 @@
 <%@ include file="Header.jsp" %>
 
 <h1>Liste des opérations sur vos coffres: </h1>
-<table class="table table-striped">
-<th>Date de début</th>
-<th>Date de fin</th>
-<th>Type d'opération</th>
-<th>Montant</th>
-<c:forEach  items="${ListeOperation}" varStatus="loopCounter" var="Operation">
-        <tr>
+
+<c:forEach  items="${ListeOperation}" varStatus="loopCounter" var="Coffre">
+
+    <h4>Coffre N°${Coffre.getId()} - ${Coffre.getLocalisation()} - Frais de garde/Mois: ${Coffre.getFrais()} €</h4>
+    <table class="table table-striped">
+    <th>Date de début</th>
+    <th>Date de fin</th>
+    <th>Type d'opération</th>
+    <th>Montant</th>
+
+    <c:forEach  items="${Coffre.getOperations()}" varStatus="loopCounter" var="Operation">
+    <tr>
             <td><fmt:formatDate value="${Operation.getDateDebut()}" pattern="dd-MM-yyyy" /></td>
             <td><fmt:formatDate value="${Operation.getDateFin()}" pattern="dd-MM-yyyy" /></td>
             <td>${Operation.getTypeOperation()}</td>
@@ -31,10 +36,10 @@
             </c:if>
 
         </tr>
+    </c:forEach>
 
+
+    </table>
 </c:forEach>
-
-</table>
-
 
 <%@ include file="Footer.jsp" %>

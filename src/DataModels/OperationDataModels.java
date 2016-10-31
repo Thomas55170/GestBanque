@@ -14,6 +14,7 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class OperationDataModels {
 
@@ -49,4 +50,32 @@ public class OperationDataModels {
         }
 
     }
+
+    public List<Operation> GetListOperationByCoffre(int idClient, int idCoffre){
+
+        ListeOperation lListeOperation;
+
+        ArrayList<Operation> operations = new ArrayList<>();
+
+
+        try{
+            JAXBContext lContext = JAXBContext.newInstance(ListeOperation.class);
+            Unmarshaller lUnmarsheller = lContext.createUnmarshaller();
+            lListeOperation = (ListeOperation) lUnmarsheller.unmarshal( new File(this.PathToXML));
+
+            for (Operation operation: lListeOperation.getListeOperation())
+            {
+
+                if ((operation.getClientBanque() == idClient) && (operation.getCoffre() == idCoffre)) {
+                    operations.add(operation);
+                }
+            }
+            return operations;
+        } catch (JAXBException e){
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
 }

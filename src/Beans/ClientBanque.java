@@ -15,12 +15,12 @@ public class ClientBanque {
     private String nom;
     @XmlElement(name = "Prenom")
     private String prenom;
+    @XmlElement(name = "MesCoffres", type= MesCoffres.class)
+    private List<MesCoffres> mesCoffres;
+
 
     private Agence agenceRattachement;
     private Boolean estClient;
-
-    @XmlElement(name = "MesCoffres", type= MesCoffres.class)
-    private List<MesCoffres> mesCoffres;
 
 
     public ClientBanque(String aNom, String aPrenom, Boolean estClient, Agence aAgence, List<MesCoffres> MesCoffres) {

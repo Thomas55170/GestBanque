@@ -26,14 +26,14 @@ public class Coffre {
 	// constructeurs
 
 	public Coffre(int id, String loc, String typec, String types, ClientBanque cl, double frais,
-			List<Operation> lesOperations) {
+			List<Operation> operations) {
 		this.id = id;
 		this.localisation = loc;
 		this.typeCoffre = typec;
 		this.typeSecurite = types;
 		this.client = cl;
 		this.frais = frais;
-		this.operations = lesOperations;
+		this.operations = operations;
 	}
 
 	public Coffre() {
@@ -95,8 +95,8 @@ public class Coffre {
 		this.frais = frais;
 	}
 
-	public void setOperation(Operation ope) {
-		this.operations.add(ope);
+	public void setOperation(List<Operation> operations) {
+		this.operations = operations;
 	}
 
 	// Methodes
