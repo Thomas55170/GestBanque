@@ -5,6 +5,8 @@
   Time: 11:55
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="Header.jsp" %>
 <script>
@@ -59,16 +61,58 @@
                     <div class="col-md-4">Prenom</div>
                     <div class="col-md-8">${prenom}</div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">Agence de rattachement</div>
-                    <div class="col-md-8"></div>
-                </div>
             </div>
             <div class="tab-pane fade in" id="tab2">
                 <h3>Mes coffres</h3>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <table class="table table-striped">
+                            <th>Localisation</th>
+                            <th>Type de Coffre</th>
+                            <th>Type de sécurité</th>
+                            <th>Frais de garde/mois</th>
+                            <c:forEach  items="${ListeCoffre}" varStatus="loopCounter" var="c">
+                                <tr>
+                                    <td>${c.getLocalisation()}</td>
+                                    <td>${c.getTypeCoffre()}</td>
+                                    <td>${c.getTypeSecurite()}</td>
+                                    <td style="color: red">-${c.getFrais()} €</td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
+                </div>
+
             </div>
             <div class="tab-pane fade in" id="tab3">
                 <h3>Mes opérations</h3>
+                <div class="row">
+                    <div class="col-md-11">
+                        <table class="table table-striped">
+                            <th>Date de début</th>
+                            <th>Date de fin</th>
+                            <th>Type d'opération</th>
+                            <th>Montant</th>
+                            <c:forEach  items="${ListeOperation}" varStatus="loopCounter" var="Operation">
+                                <tr>
+                                    <td><fmt:formatDate value="${Operation.getDateDebut()}" pattern="dd-MM-yyyy" /></td>
+                                    <td><fmt:formatDate value="${Operation.getDateFin()}" pattern="dd-MM-yyyy" /></td>
+                                    <td>${Operation.getTypeOperation()}</td>
+
+                                    <c:if test="${Operation.getTypeOperation() == 'Dépot'}">
+                                        <td style="color: green">+${Operation.getMontant()} €</td>
+                                    </c:if>
+
+                                    <c:if test="${Operation.getTypeOperation() == 'Retrait'}">
+                                        <td style="color: red">-${Operation.getMontant()} €</td>
+                                    </c:if>
+
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

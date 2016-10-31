@@ -34,15 +34,18 @@ public class ConnexionController extends HttpServlet {
 
         if (clientBool == true){
 
-                    /* Stockage du formulaire et du bean dans l'objet request */
+            /* Stockage du formulaire et du bean dans l'objet request */
             request.setAttribute("form", form);
 
             // Si Objet client est renvoyé alors on redirige vers la page MonCompte
 
-            this
+            response.sendRedirect("/GestBanque/compte");
+
+
+           /* this
                     .getServletContext()
                     .getRequestDispatcher("/WEB-INF/MonCompte.jsp")
-                    .forward( request, response );
+                    .forward( request, response );*/
         }else{
             this
                     .getServletContext()

@@ -1,6 +1,9 @@
 package Controllers;
 
 import Beans.ClientBanque;
+import Beans.Coffre;
+import Beans.MesCoffres;
+import Beans.Operation;
 import DataModels.LoginDataModels;
 import Models.BoutiqueModels;
 
@@ -10,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by pcthomas on 26/10/2016.
@@ -22,11 +27,22 @@ public class CompteController extends HttpServlet {
 
         String lNom = (String) session.getAttribute("nomClient");
         String lPrenom = (String) session.getAttribute("prenomClient");
+        Integer idClient  = (Integer) session.getAttribute("idClient");
+
         if((lNom != null) && (lPrenom != null)){
-            LoginDataModels lDataModels = new LoginDataModels();
-            ClientBanque lClient = lDataModels.GetUserInformation(lNom,lPrenom);
-            request.setAttribute("nom", lClient.getNom());
-            request.setAttribute("prenom", lClient.getPrenom());
+
+            DataModels.OperationDataModels lDataModel = new DataModels.OperationDataModels();
+            List<Operation> operations = lDataModel.GetListOperation(idClient);
+
+
+            DataModels.BoutiqueDataModels lBoutiqueDataModel = new DataModels.BoutiqueDataModels();
+            List<Coffre> coffres = lBoutiqueDataModel.getCoffreUser(idClient);
+
+            request.setAttribute("nom", lNom);
+            request.setAttribute("prenom", lPrenom);
+            request.setAttribute("ListeOperation", operations);
+            request.setAttribute("ListeCoffre", coffres);
+
             this
                     .getServletContext()
                     .getRequestDispatcher( "/WEB-INF/MonCompte.jsp" )

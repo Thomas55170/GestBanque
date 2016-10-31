@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.StringReader;
+
 import Beans.ListeOperation;
 
 public class OperationController extends HttpServlet {
@@ -22,12 +24,15 @@ public class OperationController extends HttpServlet {
         String nom = (String) session.getAttribute("nomClient");
         String prenom = (String) session.getAttribute("prenomClient");
 
+
+
         if((nom != null) && (prenom != null)){
 
-
+            int idClient  = (int) session.getAttribute("idClient");
             DataModels.OperationDataModels lDataModel = new DataModels.OperationDataModels();
 
-            request.setAttribute("ListeOperation", lDataModel.GetListOperation());
+            request.setAttribute("ListeOperation", lDataModel.GetListOperation(idClient));
+
             this
                     .getServletContext()
                     .getRequestDispatcher( "/WEB-INF/ListeOperation.jsp" )

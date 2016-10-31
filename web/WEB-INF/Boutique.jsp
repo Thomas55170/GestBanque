@@ -10,6 +10,20 @@
 <%@ include file="Header.jsp" %>
 
 <h1>Bienvenue sur la boutique</h1>
+
+<form accept-charset="UTF-8" method="post" role="form" action="boutique">
+    <fieldset>
+        <legend>Partie Commande</legend>
+        <select name="select_commande">
+            <c:forEach items="${listeCoffre}" varStatus="loopCounter"  var='c'>
+                <option name="${c.getId()}">${c.getTypeCoffre()}</option>
+            </c:forEach>
+        </select>
+        <button class="btn btn-lg btn-primary btn-block" value="Commander" type="submit">Commander</button>
+    </fieldset>
+</form>
+
+
 <div class="row">
 <c:forEach items="${listeCoffre}" varStatus="loopCounter"  var='c'>
 
@@ -20,10 +34,10 @@
                 <h3>${c.getTypeCoffre()}</h3>
                 <ul>
                     <li>Localisation: ${c.getLocalisation()}</li>
+                    <li>Type de coffre: ${c.getTypeCoffre()}</li>
                     <li>Type de sécurité: ${c.getTypeSecurite()}</li>
-                    <li>Prix: ${c.getMontant()} euros</li>
+                    <li>Frais/mois: ${c.getFrais()} €</li>
                 </ul>
-                <p><a href="#" class="btn btn-primary" role="button">Commander</a></p>
             </div>
         </div>
     </div>

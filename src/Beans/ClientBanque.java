@@ -1,27 +1,33 @@
 package Beans;
 
 import javax.xml.bind.annotation.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @XmlRootElement(name =  "ClientBanque")
-@XmlType(propOrder = {"id", "nom", "prenom"})
+@XmlType(propOrder = {"id", "nom", "prenom", "mesCoffres"})
 @XmlAccessorType(XmlAccessType.NONE)
 public class ClientBanque {
+
     @XmlElement(name = "id")
     private int id;
     @XmlElement(name = "Nom")
     private String nom;
     @XmlElement(name = "Prenom")
     private String prenom;
+
     private Agence agenceRattachement;
     private Boolean estClient;
-    private Coffre coffre;
+
+    @XmlElement(name = "MesCoffres", type= MesCoffres.class)
+    private List<MesCoffres> mesCoffres;
 
 
-    public ClientBanque(String aNom, String aPrenom, Boolean estClient, Agence aAgence, Coffre aCoffre) {
+    public ClientBanque(String aNom, String aPrenom, Boolean estClient, Agence aAgence, List<MesCoffres> MesCoffres) {
         this.nom = aNom;
         this.prenom = aPrenom;
         this.agenceRattachement = aAgence;
-        this.coffre = aCoffre;
+        this.mesCoffres = MesCoffres;
         this.estClient = estClient;
     }
 
@@ -39,6 +45,8 @@ public class ClientBanque {
     public String getPrenom() {
         return this.prenom;
     }
+
+    public List<MesCoffres> getMesCoffres(){return this.mesCoffres;}
 
     public Boolean getEstClient() {
         return this.estClient;
@@ -59,6 +67,10 @@ public class ClientBanque {
         this.prenom = pn;
     }
 
+    public void  setMesCoffres(List<MesCoffres> mesCoffres){
+        this.mesCoffres = mesCoffres;
+    }
+
     public void setAgenceRattachement(Agence agr) {
         this.agenceRattachement = agr;
     }
@@ -69,3 +81,5 @@ public class ClientBanque {
     }
 
 }
+
+

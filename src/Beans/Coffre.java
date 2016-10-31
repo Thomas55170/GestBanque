@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.*;
 import java.util.List;
 
 @XmlRootElement(name =  "CoffreBoutique")
-@XmlType(propOrder = {"id", "localisation", "typeCoffre", "typeSecurite", "montant"})
+@XmlType(propOrder = {"id", "localisation", "typeCoffre", "typeSecurite", "frais"})
 @XmlAccessorType(XmlAccessType.NONE)
 public class Coffre {
 
@@ -16,8 +16,8 @@ public class Coffre {
 	private String typeCoffre;
 	@XmlElement(name = "typeSecurite")
 	private String typeSecurite;
-	@XmlElement(name = "montant")
-	private double montant;
+	@XmlElement(name = "frais")
+	private double frais;
 
 	private ClientBanque client;
 
@@ -25,14 +25,14 @@ public class Coffre {
 
 	// constructeurs
 
-	public Coffre(int id, String loc, String typec, String types, ClientBanque cl, double montant,
+	public Coffre(int id, String loc, String typec, String types, ClientBanque cl, double frais,
 			List<Operation> lesOperations) {
 		this.id = id;
 		this.localisation = loc;
 		this.typeCoffre = typec;
 		this.typeSecurite = types;
 		this.client = cl;
-		this.montant = montant;
+		this.frais = frais;
 		this.operations = lesOperations;
 	}
 
@@ -61,8 +61,8 @@ public class Coffre {
 		return this.client;
 	}
 
-	public double getMontant() {
-		return this.montant;
+	public double getFrais() {
+		return this.frais;
 	}
 
 	public List<Operation> getOperations() {
@@ -91,8 +91,8 @@ public class Coffre {
 		this.client = iClient;
 	}
 
-	public void setMontant(double montant) {
-		this.montant = montant;
+	public void setFrais(double frais) {
+		this.frais = frais;
 	}
 
 	public void setOperation(Operation ope) {
@@ -101,12 +101,12 @@ public class Coffre {
 
 	// Methodes
 
-	public void afficheOperations() {
+	/*public void afficheOperations() {
 		System.out.println("Liste des op�rations du coffre n�" + this.id);
 		for (Operation operation : this.getOperations()) {
 			System.out.println("\n " + operation.getTypeOperation() + " effectu� par "
 					+ operation.getClientBanque().getPrenom() + " " + operation.getClientBanque().getNom()
-					+ ", d�but : " + operation.getDateDebut() + ", fin " + operation.getDateFin());
+					+ ", début : " + operation.getDateDebut() + ", fin " + operation.getDateFin());
 		}
-	}
+	}*/
 }

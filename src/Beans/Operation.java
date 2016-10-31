@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name =  "Operation")
-@XmlType(propOrder = {"dateDebut", "dateFin", "typeOperation", "clientBanque", "coffre", "frais"})
+@XmlType(propOrder = {"dateDebut", "dateFin", "typeOperation", "clientBanque", "coffre", "frais", "montant"})
 @XmlAccessorType(XmlAccessType.NONE)
 
 
@@ -25,15 +25,19 @@ public class Operation {
 	private int coffre;
     @XmlElement(name = "frais")
 	private int frais;
+	@XmlElement(name = "montant")
+	private int montant;
+
 
 	/* Constructors */
 	public Operation() {
 	}
 
-	public Operation(Date aDateDebut, Date aDateFin, String aTypeOperation) {
+	public Operation(Date aDateDebut, Date aDateFin, String aTypeOperation, Integer aMontant) {
 		this.dateDebut = aDateDebut;
 		this.dateFin = aDateFin;
 		this.typeOperation = aTypeOperation;
+		this.montant = aMontant;
 	}
 
 	public Date getDateDebut() {
@@ -58,6 +62,14 @@ public class Operation {
 
 	public void setTypeOperation(String aTypeOperation) {
 		this.typeOperation = aTypeOperation;
+	}
+
+	public Integer getMontant() {
+		return montant;
+	}
+
+	public void setMontant(Integer aMontant) {
+		this.montant = aMontant;
 	}
 
 	public int getCoffre() {

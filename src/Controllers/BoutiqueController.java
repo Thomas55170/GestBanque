@@ -42,4 +42,18 @@ public class BoutiqueController extends HttpServlet {
                     .forward( request, response );
         }
     }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String champ_commande  = "select_commande";
+        String commande =  request.getParameter(champ_commande);
+
+        BoutiqueDataModels boutique = new BoutiqueDataModels();
+       // Boolean bool = boutique.AddCoffre(Integer.parseInt(commande));
+
+        this
+                .getServletContext()
+                .getRequestDispatcher( "/WEB-INF/Boutique.jsp" )
+                .forward( request, response );
+
+    }
 }

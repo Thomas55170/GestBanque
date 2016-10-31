@@ -1,5 +1,6 @@
 package DataModels;
 
+import Beans.ClientBanque;
 import Beans.ListeOperation;
 import Beans.Operation;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OperationDataModels {
@@ -22,35 +24,29 @@ public class OperationDataModels {
     public boolean ListeOperation(){ return true;}
 
 
-
-    public List<Operation> GetListOperation(){
+    public List<Operation> GetListOperation(int idClient){
 
         ListeOperation lListeOperation = new ListeOperation();
+
+        ArrayList<Operation> operations = new ArrayList<Operation>();
 
         try{
             JAXBContext lContext = JAXBContext.newInstance(ListeOperation.class);
             Unmarshaller lUnmarsheller = lContext.createUnmarshaller();
             lListeOperation = (ListeOperation) lUnmarsheller.unmarshal( new File(this.PathToXML));
-            List<Operation> operations = lListeOperation.getListeOperation();
+
             for (Operation operation: lListeOperation.getListeOperation())
             {
 
-                if (operation.getClientBanque()== (int) session.getAttribute("idClient")) {
-                } else {
-
-                    ListeOperation.getListeOperation().add(operation);
+                if (operation.getClientBanque() == idClient) {
+                    operations.add(operation);
                 }
             }
-
-           return ListeOperation.getListeOperation();
-
+            return operations;
         } catch (JAXBException e){
             e.printStackTrace();
             return null;
         }
-
-
-
 
     }
 }

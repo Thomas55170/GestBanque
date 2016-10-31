@@ -9,7 +9,6 @@
         <servlet-name>ClientBanque</servlet-name>
         <servlet-class>Controllers.ConnexionController</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>ClientBanque</servlet-name>
         <url-pattern>/connexion</url-pattern>
@@ -54,8 +53,6 @@
         <servlet-name>Operation</servlet-name>
         <servlet-class>Controllers.OperationController</servlet-class>
     </servlet>
-
-
     <servlet-mapping>
         <servlet-name>Operation</servlet-name>
         <url-pattern>/operation</url-pattern>

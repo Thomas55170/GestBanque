@@ -19,10 +19,10 @@
                     <form accept-charset="UTF-8" method="post" role="form" action="connexion">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Nom de l'agent" name="login" type="text">
+                                <input class="form-control" placeholder="Nom de l'agent" autofocus name="login" type="text">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Prénom de l'agent" required autofocus name="password" type="password" value="">
+                                <input class="form-control" placeholder="Prénom de l'agent" required name="password" type="password" value="">
                             </div>
                             <button class="btn btn-lg btn-primary btn-block" value="Connexion" type="submit">Connexion</button>
                         </fieldset>

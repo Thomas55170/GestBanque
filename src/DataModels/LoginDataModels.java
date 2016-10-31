@@ -69,7 +69,9 @@ public class LoginDataModels {
 
     public ClientBanque GetUserInformation(String nom, String prenom){
         ListeClientBanque lListeClientBanque = new ListeClientBanque();
+
         boolean check = false;
+        ClientBanque cl = new ClientBanque();
 
         try{
             JAXBContext lContext = JAXBContext.newInstance(ListeClientBanque.class);
@@ -77,17 +79,24 @@ public class LoginDataModels {
             lListeClientBanque = (ListeClientBanque) lUnmarsheller.unmarshal( new File(this.PathToXML));
 
             for (ClientBanque iClient: lListeClientBanque.getListeClientBanque()){
-                System.out.println( iClient.toString());
+                //System.out.println( iClient.toString());
 
                 if (prenom.equals(iClient.getPrenom()) && (nom.equals(iClient.getNom()))){
-                    return iClient;
+                    check= true;
+                    cl = iClient;
+                    break;
                 }else{
-                    return null;
+                    check = false;
                 }
             }
-        } catch (JAXBException e){
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
-        return null;
+
+        if(check){
+            return cl;
+        }else{
+            return null;
+        }
     }
 }
