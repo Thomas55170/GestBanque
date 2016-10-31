@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ListeCoffresBoutique>
+    <CoffreBoutique>
+        <id>1</id>
+        <localisation>Paris</localisation>
+        <typeCoffre>Aiguille</typeCoffre>
+        <typeSecurite>Alarme</typeSecurite>
+        <frais>59</frais>
+    </CoffreBoutique>
+
+    <CoffreBoutique>
+        <id>2</id>
+        <localisation>Toulouse</localisation>
+        <typeCoffre>Numérique</typeCoffre>
+        <typeSecurite>Simple</typeSecurite>
+        <frais>10</frais>
+    </CoffreBoutique>
+
+    <CoffreBoutique>
+        <id>3</id>
+        <localisation>Nancy</localisation>
+        <typeCoffre>Digit</typeCoffre>
+        <typeSecurite>Digicode</typeSecurite>
+        <frais>99</frais>
+    </CoffreBoutique>
+
+    <CoffreBoutique>
+        <id>4</id>
+        <localisation>Marseille</localisation>
+        <typeCoffre>Anti dérapant</typeCoffre>
+        <typeSecurite>Simple</typeSecurite>
+        <frais>30</frais>
+    </CoffreBoutique>
+
+</ListeCoffresBoutique>

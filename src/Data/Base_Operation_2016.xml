@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ListingOperation>
+    <Operation>
+        <dateDebut>2014-04-30</dateDebut>
+        <dateFin>2014-05-15</dateFin>
+        <typeOperation>Retrait</typeOperation>
+        <clientBanque>3</clientBanque>
+        <coffre>2</coffre>
+        <frais>2</frais>
+        <montant>200</montant>
+    </Operation>
+
+    <Operation>
+        <dateDebut>2014-04-30</dateDebut>
+        <dateFin>2014-05-15</dateFin>
+        <typeOperation>Retrait</typeOperation>
+        <clientBanque>3</clientBanque>
+        <coffre>2</coffre>
+        <frais>1</frais>
+        <montant>150</montant>
+    </Operation>
+    
+    <Operation>
+        <dateDebut>2016-04-31</dateDebut>
+        <dateFin>2016-04-31</dateFin>
+        <typeOperation>Dépot</typeOperation>
+        <clientBanque>3</clientBanque>
+        <coffre>2</coffre>
+        <frais>1</frais>
+        <montant>1500</montant>
+    </Operation>
+
+    <Operation>
+        <dateDebut>2014-04-30</dateDebut>
+        <dateFin>2014-05-15</dateFin>
+        <typeOperation>Dépot</typeOperation>
+        <clientBanque>1</clientBanque>
+        <coffre>3</coffre>
+        <frais>1</frais>
+        <montant>50</montant>
+    </Operation>
+
+</ListingOperation>
